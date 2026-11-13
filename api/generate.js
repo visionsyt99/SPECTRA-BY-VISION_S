@@ -21,7 +21,7 @@ module.exports = async function handler(req, res) {
       ratio: b.ratio === '4:3' ? '4:3' : '16:9'
     };
     if (!clean.objective.trim()) return res.status(400).json({ error: 'Please describe what the presentation should communicate.' });
-    const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+    const model = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 26000);
     let response;
